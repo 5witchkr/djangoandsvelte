@@ -140,11 +140,11 @@ DATABASES['default'].update(db_from_env)
 
 
 # CORS 관련 추가
-CORS_ORIGIN_WHITELIST = ['http://127.0.0.1:8080',
-                         'http://localhost:8080',
-                         'http://127.0.0.1:8000',
-                         'http://localhost:8000',
-                         'https://projectsvtnew.herokuapp.com',
+CORS_ORIGIN_WHITELIST = ['https://projectsvtnew.herokuapp.com',
                          'http://projectsvtnew.herokuapp.com',
+                         # 'http://127.0.0.1:8080',
+                         # 'http://localhost:8080',
+                         # 'http://127.0.0.1:8000',
+                         # 'http://localhost:8000',
                          ]
 CORS_ALLOW_CREDENTIALS = True
