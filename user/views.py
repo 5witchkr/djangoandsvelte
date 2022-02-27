@@ -21,7 +21,7 @@ class Regist(APIView):
         if User.objects.filter(nickname=serializer.data['nickname']).exists():
             return ErrorResponse("이미 존재하는 닉네임입니다.")
         serializer.create(request.data)
-        return SuccessResponse()
+        return CommonResponse(11, "회원가입 성공!", '')
 
 
 
@@ -33,7 +33,7 @@ class Login(APIView):
         if userEmail is None:
             return ErrorResponse("회원정보가 잘못되었습니다.")
         if check_password(password, userEmail.password):
-            request.session['email'] = email
-            return SuccessResponse()
+            # request.session['email'] = email  세션값 잠깐 빼놓음
+            return CommonResponse(12, "로그인 성공!", '')
         else:
             return ErrorResponse("회원정보가 잘못되었습니다.")

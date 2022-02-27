@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'user',
+    'corsheaders',# CORS 관련 추가
 ]
 
 MIDDLEWARE = [
@@ -52,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware', # CORS 관련 추가
 ]
 
 ROOT_URLCONF = 'newproject.urls'
@@ -135,3 +137,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
+
+
+# CORS 관련 추가
+CORS_ORIGIN_WHITELIST = ['http://127.0.0.1:8080',
+                         'http://localhost:8080',
+                         'http://127.0.0.1:8000',
+                         'http://localhost:8000',
+                         'https://projectsvtnew.herokuapp.com',
+                         'http://projectsvtnew.herokuapp.com',
+                         ]
+CORS_ALLOW_CREDENTIALS = True
