@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'user',
     'corsheaders',# CORS 관련 추가
+    'content',
 ]
 
 MIDDLEWARE = [

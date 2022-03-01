@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'bundle.css'%}">
-    <title>Title</title>
+    <title>주변 맛집</title>
+    <!--카카오 맵 -->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=4b0460f59b1c82974876bc2d3cffd418"></script>
+    <!-- services와 clusterer 라이브러리 불러오기 -->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4b0460f59b1c82974876bc2d3cffd418&libraries=services,clusterer"></script>
 </head>
 <body>
     <script src="{% static 'bundle.js'%}"></script>
