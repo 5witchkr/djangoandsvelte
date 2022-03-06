@@ -17,13 +17,14 @@ class Main(APIView):
         ContentList = []
         for i in contents:
             ContentList.append(dict(
+                id=i.id,
                 subject=i.subject,
                 category=i.category,
                 nickname=i.nickname,
                 latitude=i.latitude,
                 longitude=i.longitude,
             ))
-        return SuccessResponseWithData(dict(Contents=ContentList))
+        return CommonResponse("13", "카테고리", dict(Contents=ContentList))
 
 
 
